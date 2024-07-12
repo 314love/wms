@@ -1,0 +1,13 @@
+server:
+  port: 80
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wms
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+#mybatisplus日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

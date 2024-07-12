@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ren.mapper.RecordtwoMapper">
+    <select id="pageC" resultType="com.ren.entity.RecordtwoRes">
+        select a.*,m.type_name typeName,
+               (select u.name from user u where u.id=a.userId)username,
+               (select u.name from user u where u.id=a.adminId)adminname
+        from recordtwo a,maintenance m
+            ${ew.customSqlSegment}
+    </select>
+</mapper>
